@@ -1,0 +1,58 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Medicine Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 text-gray-800">
+
+<nav class="bg-green-600 text-white px-6 py-4 shadow-md">
+    <div class="flex justify-between items-center">
+        <h1 class="text-xl font-bold">💊 Medicine Database</h1>
+        <div class="space-x-4">
+            <a asp-controller="Home" asp-action="Index" class="hover:underline">Home</a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="hover:underline">Login</a>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-md mx-auto mt-16 bg-white p-8 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">Create an Account</h2>
+
+    <form method="post" class="space-y-4">
+        <div>
+            <label class="block text-left text-gray-700 font-medium">Email</label>
+            <input asp-for="Input.Email" type="email" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <div>
+            <label class="block text-left text-gray-700 font-medium">Password</label>
+            <input asp-for="Input.Password" type="password" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <div>
+            <label class="block text-left text-gray-700 font-medium">Confirm Password</label>
+            <input asp-for="Input.ConfirmPassword" type="password" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg shadow hover:bg-green-700 transition">
+            Register
+        </button>
+    </form>
+
+    <p class="text-center text-sm text-gray-600 mt-4">
+        Already have an account?
+        <a asp-area="Identity" asp-page="/Account/Login" class="text-green-600 hover:underline font-medium">Login here</a>
+    </p>
+</main>
+
+</body>
+</html>
